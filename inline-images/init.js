@@ -1,3 +1,7 @@
+/* http://github.com/AngeloG/Chatzilla-Plugins
+ * Copyright (c) Angelo Geels, 2011
+ */
+
 plugin.id = "inline-images";
 
 plugin.init = function(glob)
