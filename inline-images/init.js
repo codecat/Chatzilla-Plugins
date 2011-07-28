@@ -15,7 +15,7 @@ plugin.init = function(glob)
 
 plugin.enable = function()
 {
-	client.munger.addRule("inline-images", new RegExp("(http://([a-z0-9\\-]+\\.)+([a-z]{2,})([A-Za-z0-9\\-/]*)[A-Za-z0-9]{5,}.(jpg|png|gif|bmp))"), function(matchText, containerTag, eventData){
+	client.munger.addRule("inline-images", new RegExp("(http://([a-z0-9\\-]+\\.)+([a-z]{2,})([A-Za-z0-9\\_\\-/]*)[A-Za-z0-9\\_\\-]{5,}.(jpg|png|gif|bmp))"), function(matchText, containerTag, eventData){
 		var newLink = document.createElementNS(XHTML_NS, "html:a");
 		newLink.setAttribute("href", matchText);
 		newLink.setAttribute("location", "_blank");
