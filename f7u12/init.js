@@ -22,7 +22,6 @@ plugin.enable = function()
 		newImage.setAttribute("style", "max-width:200px;max-height:200px;");
 		newImage.setAttribute("title", imageText);
 		
-		insertText("", newImage, eventData);
 		containerTag.appendChild(newImage);
 	}, 10, 10);
 	

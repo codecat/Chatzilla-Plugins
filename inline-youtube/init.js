@@ -25,8 +25,6 @@ plugin.enable = function()
 			newIframe.setAttribute("frameborder", "0");
 			newIframe.setAttribute("allowfullscreen", "1");
 			
-			insertText("", newIframe, eventData);
-			
 			var newYouTubeLink = document.createElementNS(XHTML_NS, "html:a");
 			newYouTubeLink.setAttribute("href", matchText);
 			newYouTubeLink.appendChild(document.createTextNode(matchText));
