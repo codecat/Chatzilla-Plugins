@@ -15,9 +15,12 @@ plugin.init = function(glob)
 plugin.enable = function()
 {
 	client.munger.addRule("f7u12",  /(\[(troll|fu|megusta|milk|perfect|harpdarp|fuckthatshit|wtf|challengeaccepted|wayevil|yuno|fuckyeah|awman|okay|melvin|omg|lol|yup|foreveralone|gtfo|ohno|jackie|sweetjesus|awyea|foreveralonelaugh|actually|pickletime)\])/, function(matchText, containerTag, eventData){
+		var imageText = matchText.replace(/(\[|\])/g, "");
+		
 		var newImage = document.createElementNS(XHTML_NS, "html:img");
-		newImage.setAttribute("src", plugin.cwd + matchText.replace(/(\[|\])/g, "")+".png");
+		newImage.setAttribute("src", plugin.cwd + imageText + ".png");
 		newImage.setAttribute("style", "max-width:200px;max-height:200px;");
+		newImage.setAttribute("title", imageText);
 		
 		insertText("", newImage, eventData);
 		containerTag.appendChild(newImage);
