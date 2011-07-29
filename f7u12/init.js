@@ -14,7 +14,7 @@ plugin.init = function(glob)
 
 plugin.enable = function()
 {
-	client.munger.addRule("f7u12",  /(\[(troll|fu|megusta|milk|perfect|harpdarp|fuckthatshit|wtf|challengeaccepted|wayevil|yuno|fuckyeah|awman|okay|melvin|omg|lol|yup|foreveralone|gtfo|ohno|jackie|sweetjesus|awyea|foreveralonelaugh|actually|pickletime|pokerface|sadtroll|disappoint|stare|seriously|badpokerface|trolldad)\])/, function(matchText, containerTag, eventData){
+	client.munger.addRule("f7u12",  /(\[(troll|fu|megusta|milk|perfect|harpdarp|fuckthatshit|wtf|challengeaccepted|wayevil|yuno|fuckyeah|awman|okay|melvin|omg|lol|yup|foreveralone|gtfo|ohno|jackie|sweetjesus|awyea|foreveralonelaugh|actually|pickletime|pokerface|sadtroll|disappoint|stare|seriously|badpokerface|trolldad|omfg|dude|heh|meep)\])/, function(matchText, containerTag, eventData){
 		var imageText = matchText.replace(/(\[|\])/g, "");
 		
 		var newImage = document.createElementNS(XHTML_NS, "html:img");
