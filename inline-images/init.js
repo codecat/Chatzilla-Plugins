@@ -6,7 +6,7 @@ plugin.id = "inline-images";
 
 plugin.init = function(glob)
 {
-	plugin.version = "1.1";
+	plugin.version = "1.2";
 	plugin.description = "Turns incoming image links (like imgur) into inline images.";
 	plugin.glob = glob;
 	
@@ -29,7 +29,7 @@ plugin.enable = function()
 			
 			var extraSpace = document.createElementNS(XHTML_NS, "html:span");
 			extraSpace.setAttribute("style", "font-size:1px;");
-			extraSpace.appendChild(document.createTextNode(" "));
+			extraSpace.appendChild(document.createTextNode("."));
 			containerTag.appendChild(extraSpace);
 			
 			containerTag.appendChild(newLink);
