@@ -27,6 +27,11 @@ plugin.enable = function()
 			newImage.setAttribute("style", "max-width:200px;max-height:200px;");
 			newLink.appendChild(newImage);
 			
+			var extraSpace = document.createElementNS(XHTML_NS, "html:span");
+			extraSpace.setAttribute("style", "font-size:1px;");
+			extraSpace.appendChild(document.createTextNode(" "));
+			containerTag.appendChild(extraSpace);
+			
 			containerTag.appendChild(newLink);
 		}else{
 			//insertLink function doesn't work properly.
