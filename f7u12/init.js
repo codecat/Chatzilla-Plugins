@@ -6,7 +6,7 @@ plugin.id = "f7u12";
 
 plugin.init = function(glob)
 {
-	plugin.version = "1.0";
+	plugin.version = "1.1";
 	plugin.description = "Gives you extra smilies from /r/fffffffuuuuuuuuuuuu.";
 	
 	return "OK";
@@ -14,8 +14,36 @@ plugin.init = function(glob)
 
 plugin.enable = function()
 {
-	client.munger.addRule("f7u12",  /(\[(troll|fu|megusta|milk|perfect|harpdarp|fuckthatshit|wtf|challengeaccepted|wayevil|yuno|fuckyeah|awman|okay|melvin|omg|lol|yup|foreveralone|gtfo|ohno|jackie|sweetjesus|awyea|foreveralonelaugh|actually|pickletime|pokerface|sadtroll|disappoint|stare|seriously|badpokerface|trolldad|omfg|dude|heh|meep|megustaperfect|angered|argh|betterthanexpected|fff|hmm|sad)\])/, function(matchText, containerTag, eventData){
+	var aliases = {
+		"trollface": "troll",
+		"fffffffuuuuuuuuuuuu": "fu",
+		"ffuuu": "fu",
+		"pickle": "pickletime",
+		"okayface": "okay"
+	};
+	
+	var rageFaces = [
+		"megusta", "milk", "perfect", "harpdarp", "fuckthatshit", "wtf",
+		"challengeaccepted", "wayevil", "yuno", "fuckyeah", "awman", "okay",
+		"melvin", "omg", "lol", "yup", "foreveralone", "foreveralonelaugh",
+		"gtfo", "ohno", "jackie", "sweetjesus", "awyea", "actually",
+		"pickletime", "pokerface", "sadtroll", "disappoint", "stare",
+		"seriously", "badpokerface", "trolldad", "omfg", "dude", "fu",
+		"heh", "meep", "megustaperfect", "angered", "argh", "troll",
+		"betterthanexpected", "fff", "hmm", "sad"
+	];
+	
+	for(alias in aliases){
+		if(rageFaces.indexOf(alias) == -1)
+			rageFaces.push(alias);
+	}
+	
+	var regex = "(\\[(" + rageFaces.join("|") + ")\\])";
+	client.munger.addRule("f7u12", new RegExp(regex), function(matchText, containerTag, eventData){
 		var imageText = matchText.replace(/(\[|\])/g, "");
+		
+		if(aliases[imageText] != null)
+			imageText = aliases[imageText];
 		
 		var newImage = document.createElementNS(XHTML_NS, "html:img");
 		newImage.setAttribute("src", plugin.cwd + imageText + ".png");
