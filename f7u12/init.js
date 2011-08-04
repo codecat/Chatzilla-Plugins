@@ -19,7 +19,8 @@ plugin.enable = function()
 		"fffffffuuuuuuuuuuuu": "fu",
 		"ffuuu": "fu",
 		"pickle": "pickletime",
-		"okayface": "okay"
+		"okayface": "okay",
+		"fuckthatbitch": "fuckthatshit"
 	};
 	
 	var rageFaces = [
