@@ -20,7 +20,8 @@ plugin.enable = function()
 		"ffuuu": "fu",
 		"pickle": "pickletime",
 		"okayface": "okay",
-		"fuckthatbitch": "fuckthatshit"
+		"fuckthatbitch": "fuckthatshit",
+		"yay": "foreveralonelaugh"
 	};
 	
 	var rageFaces = [
