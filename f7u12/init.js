@@ -55,12 +55,23 @@ plugin.enable = function()
 		containerTag.appendChild(newImage);
 	}, 10, 10);
 	
+	client.commandManager.defineCommand("f7u12", function(){
+		display("Do you really need help with this plugin? [omg]");
+		display("Fine. You type [name] where you replace \"name\" with one of the following:");
+		var list = "";
+		for(i in rageFaces){
+			list += rageFaces[i] + " ";
+		}
+		display(list.trim());
+	});
+	
 	return true;
 }
 
 plugin.disable = function()
 {
 	client.munger.delRule("f7u12");
+	client.commandManager.removeCommand("f7u12");
 	
 	return true;
 }
